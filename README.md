@@ -1,29 +1,32 @@
-# swib18-workshop <small>[✎](http://etherpad.lobid.org/mypads/?/mypads/group/lobid-mm5v3lj/pad/view/swib18-workshop-o21dx3u5)</small>
+# ELAG 2019 Bootcamp
 
-## Abstract
+## From LOD to LOUD: building and using JSON-LD APIs
 
-From LOD to LOUD: making data usable
+https://www.elag2019.de/bootcamps.html#loud
 
-Linked Open Usable Data (LOUD) extends Linked Open Data (LOD) by focussing on use cases, being as simple as possible, and providing developer friendly web APIs with JSON-LD. The term was coined [by Rob Sanderson](https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud). [This workshop](http://swib.org/swib18/programme.html#abs03) will introduce you to the basic concepts of LOUD, web APIs, and JSON-LD. You'll learn how to publish and document data as LOUD, and how to use that data in different contexts.
+**Expected time slot**: 6 hours
 
-In this workshop, we will:
+**Audience**: librarians and developers working with linked open data
 
-- Convert RDF data into usable [JSON-LD](https://json-ld.org/)
-- Index and query the data with [Elasticsearch](https://www.elastic.co/products/elasticsearch)
+**Expertise**: basic command line and text editor usage
+
+**Required**: Laptop running VirtualBox. Before the workshop we will publish detailed installation instructions and at the bootcamp we will provide a fully configured virtual machine.
+
+**Programming experience**: Not required but helpful
+
+Linked Open Usable Data (LOUD) extends Linked Open Data (LOD) by focussing on use cases, being as simple as possible, and providing developer friendly web APIs with JSON-LD. This bootcamp will introduce you to the basic concepts of LOUD, web APIs, and JSON-LD. You'll learn how to publish and document data as LOUD, and how to use that data in different contexts. 
+In this bootcamp, we will:
+
+- Convert RDF data into usable JSON-LD
+- Index and query the data with Elasticsearch
 - Create a simple web application using the data
-- Visualize the data with [Kibana](https://www.elastic.co/products/kibana)
-- Document the data with [Hypothesis annotations](https://web.hypothes.is/)
-- Use the data with [OpenRefine](http://openrefine.org/)
-
-Audience: librarians and developers working with linked open data.
-
-Requirements: Laptop with [Elasticsearch 6.x](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html), [OpenRefine 2.8](https://github.com/OpenRefine/OpenRefine/wiki/Installation-Instructions), a text editor, web browser, and a command line with [cURL](https://curl.haxx.se/download.html) and [jsonld.js via node.js](https://github.com/digitalbazaar/jsonld.js#installation). As an alternative, we'll also provide a fully configured virtual machine to workshop participants.
+- Visualize the data with Kibana
+- Document the data with Hypothesis annotations
+- Use the data with OpenRefine
 
 ## Location
 
-The LOUD workshop will take place on the premises of the [German Institute for Adult Education](https://www.die-bonn.de/default.aspx?lang=en) (Deutsches Institut für Erwachsenenbildung, short: DIE :-). The workshop room is on the ground floor and easy to find. You will have to show your passport at the gate. (This security measures apply because there are other federal authorities located on the premises.) Here is a map showing the five-minute walk from the registration desk at Friedrich-Ebert-Stiftung (green marker) to the gate (red marker):
-
-![route from FES to DIE](/img/loud-workshop-route.png)
+tbd
 
 ## Setup
 
@@ -132,6 +135,8 @@ See: [https://www.VirtualBox.org/wiki/Downloads](https://www.VirtualBox.org/wiki
 Start the box. If it doesn't come up with a GUI you may have to install the "virtualbox-qt" package.
 
 #### Load the virtual machine into VirtualBox
+
+⚠ *Virtual machine for ELAG bootcamp has to be added ([#3](https://github.com/hbz/elag2019-bootcamp/issues/3)) & links have to be updated* ⚠
 
 Download the 7z-archived (or zipped) virtual machine from [http://labs.lobid.org/download/](http://labs.lobid.org/download/). The size of the packed file is 2.4 GB (3 GB for the zip), unpacked it's 7.5 GB (so make sure you have got around at least 10 GB free space). To decompress the 7z-archived file you need the [7z archiver](https://www.7-zip.org/download.html).
 
