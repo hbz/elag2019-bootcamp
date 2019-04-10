@@ -4,9 +4,9 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>From LOD to LOUD: making data usable</title>
+		<title>From LOD to LOUD: building and using JSON-LD APIs</title>
 
-		<meta name="description" content="Workshop at SWIB18">
+		<meta name="description" content="Bootcamp at ELAG2019">
 		<meta name="author" content="Adrian Pohl">
 		<meta name="author" content="Pascal Christoph">
 		<meta name="author" content="Fabian Steeg">
@@ -20,7 +20,7 @@
 		{
 			"@context": "http://schema.org",
 			"type": "PresentationDigitalDocument",
-			"name" : "From LOD to LOUD: making data usable",
+			"name" : "From LOD to LOUD: building and using JSON-LD APIs",
 			"creator" : [{
 				"id": "http://lobid.org/team/ap#!",
 				"type": "Person",
@@ -36,10 +36,10 @@
 				"type": "Person",
 				"name": "Fabian Steeg"
 			}],
-			"description": "These are the accompanying slides for the SWIB18 workshop \"From LOD to LOUD: making data usable\".",
+			"description": "These are the accompanying slides for the ELAG2019 Bootcamp \"From LOD to LOUD: building and using JSON-LD APIs\".",
 			"about" : [ "lobid", "libraries", "linked open data", "APIs", "JSON-LD" ],
-			"url" : "https://hbz.github.io/swib18-workshop/#/",
-			"datePublished" : "2018-11-26",
+			"url" : "https://hbz.github.io/elag2019-bootcamp/#/",
+			"datePublished" : "2019-05-07",
 			"inLanguage" : "en",
 			"audience": [ "librarians", "developers" ],
 			"license": "https://creativecommons.org/licenses/by/4.0/"
@@ -83,8 +83,8 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section data-state="adrian">
-					<h2>From LOD to LOUD: <br/>making data usable</h2>
-					<h4>Workshop at SWIB18</h4>
+					<h2>From LOD to LOUD: building and using JSON-LD APIs</h2>
+					<h4>Bootcamp at ELAG2019</h4>
 					<p>
 						<small>
 							<a href="http://fsteeg.com/">Fabian Steeg</a> /
@@ -95,11 +95,11 @@
 							<a href="https://twitter.com/dr0ide">@dr0ide</a> <br/>
 							<a href="http://lobid.org/team">Linked Open Data, Hochschulbibliothekszentrum NRW (hbz)</a> </small> <br/>
 						<a href="https://lobid.org"><img src="img/lobid.png" style="border: none; padding: 5px; background-color: white" width="125px" /></a><br/>
-						<small>Bonn, 2018-11-26</small>
+						<small>Berlin, 2019-05-07</small>
 					</p>
 					<p>
 						This presentation: <br /> <a
-							href="http://hbz.github.io/swib18-workshop">http://hbz.github.io/swib18-workshop</a>
+							href="http://hbz.github.io/elag2019-bootcamp">http://hbz.github.io/elag2019-bootcamp</a>
 						<br/>
 						<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="img/cc-by.png" title="Licensed under a Creative Commons Attribution 4.0 International License"></a>
 					</p>
@@ -202,7 +202,7 @@
 
 				<section data-state="fabian">
 					<h1>Libraries are Software</h1>
-					<blockquote>Our collections and services are delivered primarily via software. [...] The choices we make in the development, 
+					<blockquote>Our collections and services are delivered primarily via software. [...] The choices we make in the development,
 					selection, and implementation of this software [...] define the limits of our content and services. We can only be as good as our software.</blockquote>
 					<blockquote> &mdash; Cody Hanson, <a href="http://codyhanson.com/writing/software.html">Libraries are Software</a></blockquote>
 				</section>
@@ -271,7 +271,7 @@
 
 				<section data-state="pascal">
 					<h1>Setup</h1>
-					<span class="fragment"><p><a href='https://github.com/hbz/swib18-workshop#setup'>https://github.com/hbz/swib18-workshop#setup</a></p></span>
+					<span class="fragment"><p><a href='https://github.com/hbz/elag2019-bootcamp#setup'>https://github.com/hbz/elag2019-bootcamp#setup</a></p></span>
 					<span class="fragment"><p>($ git pull origin master)</p></span>
 				</section>
 
@@ -347,7 +347,7 @@ $ curl https://api.github.com/&lt;???&gt;
 								</tbody>
 							</table>
 					<p><font size="5">('&lt;???&gt;' <i>means you should insert your solution here</i>)</font></p>
-					<p>We have a repo for this workshop called 'swib18-workshop' under the 'hbz' organization</p>
+					<p>We have a repo for this workshop called 'elag2019-bootcamp' under the 'hbz' organization</p>
 					</section>
 
 					<section data-state="fabian">
@@ -368,7 +368,7 @@ $ curl https://api.github.com/users/hbz
 										<td>Repo</td>
 										<td>
 											<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/swib18-workshop
+$ curl https://api.github.com/repos/hbz/elag2019-bootcamp
 											</code></pre>
 										</td>
 									</tr>
@@ -381,12 +381,12 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop
 					<section data-state="fabian">
 						<h2>Response</h2>
 						<pre><code class="json" data-trim>
-$ curl https://api.github.com/repos/hbz/swib18-workshop
+$ curl https://api.github.com/repos/hbz/elag2019-bootcamp
 {
   "id": 150073510,
   "node_id": "MDEwOlJlcG9zaXRvcnkxNTAwNzM1MTA=",
-  "name": "swib18-workshop",
-  "full_name": "hbz/swib18-workshop",
+  "name": "elag2019-bootcamp",
+  "full_name": "hbz/elag2019-bootcamp",
   "private": false,
   "owner": {
     "login": "hbz",
@@ -402,7 +402,7 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop
 						<h2>JavaScript Object Notation (JSON)</h2>
 						<span class="fragment"><pre><code class="javascript" data-trim>
 var options = {
-  url: 'https://api.github.com/repos/hbz/swib18-workshop',
+  url: 'https://api.github.com/repos/hbz/elag2019-bootcamp',
   headers: { 'User-Agent': 'hbz' }
 };
 
@@ -430,7 +430,7 @@ request(options, function (error, response, body) {
 					<section data-state="fabian">
 						<h2>Exercise 2a: JSON with jq</h2>
 						<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/swib18-workshop \
+$ curl https://api.github.com/repos/hbz/elag2019-bootcamp \
 | jq .name # filter: .name
 						</code></pre>
 						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
@@ -446,7 +446,7 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop \
 									<td>Issues</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/swib18-workshop | jq &lt;???&gt; # get the number of open issues
+$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq &lt;???&gt; # get the number of open issues
 										</code></pre>
 									</td>
 								</tr>
@@ -454,7 +454,7 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop | jq &lt;???&gt; # get t
 									<td>License</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/swib18-workshop | jq &lt;???&gt; # get the repo's license name
+$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq &lt;???&gt; # get the repo's license name
 										</code></pre>
 									</td>
 								</tr>
@@ -473,7 +473,7 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop | jq &lt;???&gt; # get t
 									<td>Issues</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/swib18-workshop | jq .open_issues_count
+$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq .open_issues_count
 										</code></pre>
 									</td>
 								</tr>
@@ -481,7 +481,7 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop | jq .open_issues_count
 									<td>License</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/swib18-workshop | jq .license.name
+$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq .license.name
 										</code></pre>
 									</td>
 								</tr>
@@ -512,8 +512,8 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop | jq .license.name
 
 					<section data-state="adrian">
 						<h2>Example work</h2>
-						<a href="http://rdf-translator.appspot.com/convert/nt/nt/html/https%3A%2F%2Fraw.githubusercontent.com%2Fhbz%2Fswib18-workshop%2Fmaster%2Fdata%2Floc.nt"><img src="img/nt.png" style="border: none; box-shadow: none;" /></a>
-						<small>Source file: <a href="https://github.com/hbz/swib18-workshop/blob/master/data/loc.nt">https://github.com/hbz/swib18-workshop/blob/master/data/loc.nt</a></small>
+						<a href="http://rdf-translator.appspot.com/convert/nt/nt/html/https%3A%2F%2Fraw.githubusercontent.com%2Fhbz%2Felag2019-bootcamp%2Fmaster%2Fdata%2Floc.nt"><img src="img/nt.png" style="border: none; box-shadow: none;" /></a>
+						<small>Source file: <a href="https://github.com/hbz/elag2019-bootcamp/blob/master/data/loc.nt">https://github.com/hbz/elag2019-bootcamp/blob/master/data/loc.nt</a></small>
 					</section>
 
 					<section data-state="fabian">
@@ -552,7 +552,7 @@ $ curl https://api.github.com/repos/hbz/swib18-workshop | jq .license.name
 									<td>Location</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ cd ~/git/swib18-workshop/data
+$ cd ~/git/elag2019-bootcamp/data
 										</code></pre>
 									</td>
 								</tr>
@@ -596,7 +596,7 @@ $ jsonld import loc.nt > loc.json
  }],...
 }
 					</code></pre>
-					<p><a href='http://hbz.github.io/swib18-workshop/data/index.html#jsonld-output'>Serialized RDF as JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11-api/#serialize-rdf-as-json-ld-algorithm'>Specification</a></p>
+					<p><a href='http://hbz.github.io/elag2019-bootcamp/data/index.html#jsonld-output'>Serialized RDF as JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11-api/#serialize-rdf-as-json-ld-algorithm'>Specification</a></p>
 					</section>
 
 					<section data-state="fabian">
@@ -656,8 +656,8 @@ $ cat loc.json | jq &lt;???&gt;
  }],...
 }
 					</code></pre>
-					<p><a href='http://hbz.github.io/swib18-workshop/data/index.html#jsonld-output'>Serialized RDF as JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11-api/#serialize-rdf-as-json-ld-algorithm'>Specification</a></p>
-					</section> 
+					<p><a href='http://hbz.github.io/elag2019-bootcamp/data/index.html#jsonld-output'>Serialized RDF as JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11-api/#serialize-rdf-as-json-ld-algorithm'>Specification</a></p>
+					</section>
 
 					<section data-state="fabian">
 						<h2>Data processing vs. API access</h2>
@@ -694,7 +694,7 @@ doc.license.name // doc.subject.label?
 					<section data-state="fabian">
 						<h1>Developer empathy</h1>
 						<span class="fragment"><blockquote>
-							When it comes to APIs, developers are your users. The same principles of user-centred-design apply 
+							When it comes to APIs, developers are your users. The same principles of user-centred-design apply
 							to the development and publication of APIs (simplicity, obviousness, fit-for-purpose etc).
 							<small><br/><a href='https://apiguide.readthedocs.io/en/latest/principles/empathy.html'>API Design Guide, Digital Transformation Agency, Australia</a></small></blockquote>
 						</span>
@@ -775,7 +775,7 @@ $ jsonld frame -f frame.json loc.json > loc-framed.json
  }, {...}],
 }
 					</code></pre>
-					<p><a href='http://hbz.github.io/swib18-workshop/data/index.html#jsonld-framed'>Framed JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11/#framed-document-form'>Specification</a></p>
+					<p><a href='http://hbz.github.io/elag2019-bootcamp/data/index.html#jsonld-framed'>Framed JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11/#framed-document-form'>Specification</a></p>
 					</section>
 
 					<section data-state="fabian">
@@ -814,7 +814,7 @@ $ cat loc-framed.json | jq &lt;???&gt;
 					<section data-state="fabian">
 						<h1>JSON-LD Context</h1>
 						<span class="fragment"><p>Mapping of JSON keys to URIs: <br/><code>"@context":{"name":"http://schema.org/name"}</code></p></span>
-						<span class="fragment"><p>With this context, we can <a href='https://www.w3.org/TR/json-ld11-api/#compaction'>compact</a> (replace URIs with short keys) or 
+						<span class="fragment"><p>With this context, we can <a href='https://www.w3.org/TR/json-ld11-api/#compaction'>compact</a> (replace URIs with short keys) or
 						<a href='https://www.w3.org/TR/json-ld11-api/#expansion'>expand</a> (replace short keys with URIs) our JSON-LD</p></span>
 						<span class="fragment"><p>http://schema.org/name &rlarr; name</p></span>
 						<span class="fragment"><p>`http://id.loc.gov/ontologies/bibframe/subject`<br/>.`http://www.w3.org/2000/01/rdf-schema#label`?</p></span>
@@ -823,7 +823,7 @@ $ cat loc-framed.json | jq &lt;???&gt;
 					<section data-state="adrian">
 						<h1>How do we get the context?</h1>
 						<span class="fragment"><p><a href="https://twitter.com/lobidOrg/status/1044866797067997184">Does LOC or somebody else already provide one?</a> – No.</p></span>
-						<span class="fragment"><p><a href="https://github.com/hbz/swib18-workshop/issues/2#issuecomment-424710995">Here: context generated from ontologies</a>  with (much) manual post-processing</p></span>
+						<span class="fragment"><p><a href="https://github.com/hbz/elag2019-bootcamp/issues/2#issuecomment-424710995">Here: context generated from ontologies</a>  with (much) manual post-processing</p></span>
 						<span class="fragment"><p>Alternatives: upfront design or generate from data</p></span>
 						<span class="fragment"><p>To be discussed in JSON-LD break-out session</p></span>
 					</section>
@@ -897,7 +897,7 @@ $ jsonld compact -c context.json loc-framed.json > loc-compact.json
  ], ...
 }
 					</code></pre>
-					<p><a href='http://hbz.github.io/swib18-workshop/data/index.html#jsonld-compact'>Compacted JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11/#compacted-document-form'>Specification</a></p>
+					<p><a href='http://hbz.github.io/elag2019-bootcamp/data/index.html#jsonld-compact'>Compacted JSON-LD</a> | <a href='https://www.w3.org/TR/json-ld11/#compacted-document-form'>Specification</a></p>
 					</section>
 
 					<section data-state="fabian">
@@ -1738,7 +1738,7 @@ $ jsonld format -q http://localhost:9200/loc/work/c000000026/_source
 									<td>Run server (new terminal)</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ cd ~/git/swib18-workshop ; npm start
+$ cd ~/git/elag2019-bootcamp ; npm start
 										</code></pre>
 									</td>
 								</tr>
@@ -2340,8 +2340,8 @@ _exists_:geographicCoverage
 
   &lt;script src="https://hypothes.is/embed.js" async&gt;&lt;/script&gt;
 
-  &lt;link rel="canonical" 
-    href="https://hbz.github.io/swib18-workshop/search.html"/&gt;
+  &lt;link rel="canonical"
+    href="https://hbz.github.io/elag2019-bootcamp/search.html"/&gt;
 &lt;/head&gt;
 						</code></pre>
 						<p><small>(Only embed.js script is required, config and canonical link are optional)</small>
@@ -2355,8 +2355,8 @@ _exists_:geographicCoverage
 						<h2>Exercise 24:<br/>Add annotations</h2>
 						<p>Based on your experience in the query exercise, pick a field and document it like in one of the sample annotations</p>
 						<p>Markdown syntax is supported for links etc.</p>
-						<p>Use the `swib18-workshop` tag to make it searchable</p>
-						<p><a href="https://hypothes.is/search?q=tag:%22swib18-workshop%22">https://hypothes.is/search?q=tag:%22swib18-workshop%22</a></p>
+						<p>Use the `elag2019-bootcamp` tag to make it searchable</p>
+						<p><a href="https://hypothes.is/search?q=tag:%22elag2019-bootcamp%22">https://hypothes.is/search?q=tag:%22elag2019-bootcamp%22</a></p>
 					</section>
 
 					<section data-state="fabian">
@@ -2607,7 +2607,7 @@ Educational interests of Colorado
 
 					<section data-state="adrian">
 						<h1>Code for exercises and HTML for slides available on the web</h1>
-						<p><a href="https://github.com/hbz/swib18-workshop/">https://github.com/hbz/swib18-workshop/</a></p>
+						<p><a href="https://github.com/hbz/elag2019-bootcamp/">https://github.com/hbz/elag2019-bootcamp/</a></p>
 						<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="img/cc-by.png" title="Licensed under a Creative Commons Attribution 4.0 International License"></a></p>
 					</section>
 			</div>
