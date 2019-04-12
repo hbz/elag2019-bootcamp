@@ -242,23 +242,19 @@
 					<blockquote><h1>API: how?</h1></blockquote>
 					<span class="fragment"><h1>JSON over HTTP</h1></span>
 					<span class="fragment"><h3><a href="https://twobithistory.org/2017/09/21/the-rise-and-rise-of-json.html">standard web API format since years</a></h3></span>
-					<span class="fragment"><h4>e.g. <a href='https://api.github.com/'> https://api.github.com/</a></h4></span>
+					<span class="fragment"><h4>e.g. <a href='https://
+- [ ] hub.com/'>https://lobid.org/organisations/search</a></h4></span>
 				</section>
 
 				<section data-state="fabian">
-					<h2>GET https://api.github.com</h2>
+					<h3>GET https://lobid.org/organisations</h3>
 					<pre><code class="json" data-trim>
 {
-  "current_user_url": "https://api.github.com/user",
-  "authorizations_url": "https://api.github.com/authorizations",
-  "emails_url": "https://api.github.com/user/emails",
-  "emojis_url": "https://api.github.com/emojis",
-  "events_url": "https://api.github.com/events",
-  "feeds_url": "https://api.github.com/feeds",
-  "followers_url": "https://api.github.com/user/followers",
-  "gists_url": "https://api.github.com/gists{/gist_id}",
-  "hub_url": "https://api.github.com/hub",
-  ...
+  "query_url": "https://lobid.org/organisations/search?q={query}",
+  "documentation": {
+    "en": "https://lobid.org/organisations/api/en",
+    "de": "https://lobid.org/organisations/api/de"
+  }
 }
 					</code></pre>
 				</section>
@@ -266,7 +262,7 @@
 				<section data-state="fabian">
 					<p>Part Ib.</p>
 					<blockquote><h2>JSON APIs</h2></blockquote>
-					<blockquote><h2>Using the GitHub API, processing JSON</h2></blockquote>
+					<blockquote><h2>Using the lobid-organisations API, processing JSON</h2></blockquote>
 				</section>
 
 				<section data-state="pascal">
@@ -295,7 +291,7 @@
 										<td>cURL</td>
 										<td>
 											<pre><code class="bash" data-trim>
-$ curl https://api.github.com
+$ curl https://lobid.org/organisations
 											</code></pre>
 										</td>
 									</tr>
@@ -304,7 +300,7 @@ $ curl https://api.github.com
 										<td>
 											<pre><code class="bash" data-trim>
 # Copy above, paste in terminal
-$ curl https://api.github.com
+$ curl https://lobid.org/organisations
 											</code></pre>
 										</td>
 									</tr>
@@ -313,7 +309,7 @@ $ curl https://api.github.com
 										<td>
 											<pre><code class="bash" data-trim>
 $ &uarr; # access the history
-$ curl https://api.github.com
+$ curl https://lobid.org/organisations
 											</code></pre>
 										</td>
 									</tr>
@@ -325,50 +321,30 @@ $ curl https://api.github.com
 					<section data-state="fabian">
 						<h2>Exercise 1b: cURL</h2>
 							<table style="border: 1px solid white; table-layout:fixed; width: 100%">
-								<col width="10%" />
-								<col width="90%" />
+								<col width="100%" />
 								<tbody>
 									<tr>
-										<td>Profile</td>
 										<td>
 											<pre><code class="bash" data-trim>
-$ curl https://api.github.com/&lt;???&gt; # user or org
-											</code></pre>
-										</td>
-									</tr>
-									<tr>
-										<td>Repo</td>
-										<td>
-											<pre><code class="bash" data-trim>
-$ curl https://api.github.com/&lt;???&gt;
+$ curl https://lobid.org/organisations/&lt;???&gt; 
 											</code></pre>
 										</td>
 									</tr>
 								</tbody>
 							</table>
 					<p><font size="5">('&lt;???&gt;' <i>means you should insert your solution here</i>)</font></p>
-					<p>We have a repo for this workshop called 'elag2019-bootcamp' under the 'hbz' organization</p>
+					<p>There exists an entry for Staatsbibliothek Berlin @Potsdamer Straße</p>
 					</section>
 
 					<section data-state="fabian">
 						<h2>Exercise 1c: cURL<br/> Solution</h2>
 						<table style="border: 1px solid white; table-layout:fixed; width: 100%">
-								<col width="10%" />
-								<col width="90%" />
+								<col width="100%" />
 								<tbody>
 									<tr>
-										<td>Profile</td>
 										<td>
 											<pre><code class="bash" data-trim>
-$ curl https://api.github.com/users/hbz
-											</code></pre>
-										</td>
-									</tr>
-									<tr>
-										<td>Repo</td>
-										<td>
-											<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/elag2019-bootcamp
+$ curl https://lobid.org/organisations/DE-1a
 											</code></pre>
 										</td>
 									</tr>
@@ -381,19 +357,20 @@ $ curl https://api.github.com/repos/hbz/elag2019-bootcamp
 					<section data-state="fabian">
 						<h2>Response</h2>
 						<pre><code class="json" data-trim>
-$ curl https://api.github.com/repos/hbz/elag2019-bootcamp
+$ curl https://lobid.org/organisations/DE-1a
 {
-  "id": 150073510,
-  "node_id": "MDEwOlJlcG9zaXRvcnkxNTAwNzM1MTA=",
-  "name": "elag2019-bootcamp",
-  "full_name": "hbz/elag2019-bootcamp",
-  "private": false,
-  "owner": {
-    "login": "hbz",
-    "id": 6557108,
-    "node_id": "MDEyOk9yZ2FuaXphdGlvbjY1NTcxMDg=",
-    "avatar_url": "https://avatars3.githubusercontent.com/u/6557108?v=4",
-    "gravatar_id": "",
+  "linkedTo" : {
+    "id" : "http://lobid.org/organisations/DE-601#!",
+    "label" : "Verbundzentrale des GBV (VZG)"
+  },
+  "rs" : "110000000000",
+  "address" : {
+    "addressLocality" : "Berlin",
+    "type" : "PostalAddress",
+    "addressCountry" : "DE",
+    "postalCode" : "10772"
+  },
+...
 						</code></pre>
 						<p>Output is quite long, we often want specific values</p>
 					</section>
@@ -402,17 +379,17 @@ $ curl https://api.github.com/repos/hbz/elag2019-bootcamp
 						<h2>JavaScript Object Notation (JSON)</h2>
 						<span class="fragment"><pre><code class="javascript" data-trim>
 var options = {
-  url: 'https://api.github.com/repos/hbz/elag2019-bootcamp',
+  url: 'https://lobid.org/organisations/DE-1a',
   headers: { 'User-Agent': 'hbz' }
 };
 
 request(options, function (error, response, body) {
   var doc = JSON.parse(body);
-  console.log('repo license:', doc.license.name) // <-- use JSON
+  console.log('lib openingHours:', location.openingHoursSpecification.description) // <-- use JSON
 });
 						</code></pre></span>
 						<span class="fragment"><pre><code class="nohighlight" data-trim>
-> license.name: Creative Commons Attribution 4.0 International
+> location.openingHoursSpecification.description: Mo-Fr 9.00-21.00, Sa 10.00-19.00
 						</code></pre></span>
 					</section>
 
