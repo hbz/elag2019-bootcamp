@@ -407,7 +407,7 @@ request(options, function (error, response, body) {
 					<section data-state="fabian">
 						<h2>Exercise 2a: JSON with jq</h2>
 						<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/elag2019-bootcamp \
+$ curl https://lobid.org/organisations/DE-1a \
 | jq .name # filter: .name
 						</code></pre>
 						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
@@ -416,22 +416,22 @@ $ curl https://api.github.com/repos/hbz/elag2019-bootcamp \
 					<section data-state="fabian">
 						<h2>Exercise 2b: JSON with jq</h2>
 						<table style="border: 1px solid white; table-layout:fixed; width: 100%">
-							<col width="10%" />
-							<col width="90%" />
+							<col width="15%" />
+							<col width="85%" />
 							<tbody>
 								<tr>
-									<td>Issues</td>
+									<td>Funder</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq &lt;???&gt; # get the number of open issues
+$ curl https://lobid.org/organisations/DE-1a | jq &lt;???&gt; # get the English label for the type of the lib's funder
 										</code></pre>
 									</td>
 								</tr>
 								<tr>
-									<td>License</td>
+									<td>Opening Hours</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq &lt;???&gt; # get the repo's license name
+$ curl https://lobid.org/organisations/DE-1a | jq &lt;???&gt; # get the opening hours description
 										</code></pre>
 									</td>
 								</tr>
@@ -443,22 +443,22 @@ $ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq &lt;???&gt; # get
 					<section data-state="fabian">
 						<h2>Exercise 2c: JSON with jq</h2>
 						<table style="border: 1px solid white; table-layout:fixed; width: 100%">
-							<col width="10%" />
-							<col width="90%" />
+							<col width="15%" />
+							<col width="85%" />
 							<tbody>
 								<tr>
-									<td>Issues</td>
+									<td>Funder</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq .open_issues_count
+$ curl https://lobid.org/organisations/DE-1a | jq .fundertype.label.en
 										</code></pre>
 									</td>
 								</tr>
 								<tr>
-									<td>License</td>
+									<td>Opening Hours</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl https://api.github.com/repos/hbz/elag2019-bootcamp | jq .license.name
+$ curl https://lobid.org/organisations/DE-1a | jq .location[].openingHoursSpecification.description
 										</code></pre>
 									</td>
 								</tr>
