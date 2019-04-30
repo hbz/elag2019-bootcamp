@@ -17,7 +17,11 @@ RUN apt-get install -y g++
 
 # install node (8.x or higher):
 RUN curl -sL https://deb.nodesource.com/setup_8.x > setup_8.x
-RUN chmod 755 ./setup_8.x && ./setup_8.x
+RUN sync
+#RUN chmod 755 ./setup_8.x && ./setup_8.x
+RUN chmod 755 ./setup_8.x 
+RUN sync
+RUN ./setup_8.x
 RUN apt-get install -y nodejs
 
 # install the hbz jsonld-cli fork:
@@ -46,13 +50,13 @@ RUN apt-get install -y kibana
 RUN sed -i "s|#server.host: \"localhost\"|server.host: 0.0.0.0|g" /etc/kibana/kibana.yml
 
 # install workshop data
-RUN git clone https://github.com/hbz/swib18-workshop.git
+RUN git clone https://github.com/hbz/elag2019-bootcamp.git
 
-WORKDIR /home/loud/swib18-workshop
+WORKDIR /home/loud/elag2019-bootcamp
 RUN npm install
 
 # set default host to 0.0.0.0
-RUN sed -i "s|const hostname = '127.0.0.1'|const hostname = '0.0.0.0'|g" /home/loud/swib18-workshop/js/app.js
+RUN sed -i "s|const hostname = '127.0.0.1'|const hostname = '0.0.0.0'|g" /home/loud/elag2019-bootcamp/js/app.js
 
 # start all services 
 CMD service elasticsearch start && service kibana start && npm start
