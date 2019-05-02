@@ -24,12 +24,12 @@ jsonld compact -c context.json loc-100-framed.json > loc-100-compact.json
 
 # Create bulk index format
 FILTER='.["@graph"][] | "\({index:{_index:"loc",_type:"work",_id:(.id/"/")|last}})\n\({"@context":"http://localhost:3000/context.json"}+.)"'
-cat loc-100-compact.json | jq -c -r "$FILTER" > loc-100-bulk.ndjson
-head -n 2 loc-100-bulk.ndjson
+cat loc-100-compact.json | jq -c -r "$FILTER" > bulk.ndjson
+head -n 2 bulk.ndjson
 
 # Index in Elasticsearch
 curl -XDELETE localhost:9200/loc ; echo
-curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/_bulk --data-binary "@loc-100-bulk.ndjson" | jq '.items | length'
+curl -s -H "Content-Type: application/x-ndjson" -XPOST localhost:9200/_bulk --data-binary "@bulk.ndjson" | jq '.items | length'
 sleep 1
 
 # Use index

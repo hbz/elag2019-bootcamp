@@ -6,22 +6,22 @@ const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 const deleteFile = util.promisify(fs.unlink);
 
-// ===============================
-// 1. Use JSON from the GitHub API
-// ===============================
+// ==========================
+// 1. Use JSON from a web API
+// ==========================
 
 var request = require('request');
 var options = {
-  url: 'https://api.github.com/repos/hbz/elag2019-bootcamp',
-  headers: { 'User-Agent': 'fsteeg' }
+  url: 'https://lobid.org/organisations/DE-1a',
+  headers: { 'User-Agent': 'elag19' }
 };
 request(options, (error, response, body) => {
   var doc = JSON.parse(body);
   console.log();
-  console.log('=== Repo: ====');
+  console.log('=== API call: ====');
   console.log('statusCode:', response && response.statusCode);
-  console.log('license.name:', doc.license.name)
-  console.log('==============');
+  console.log('fundertype.label.en:', doc.fundertype.label.en)
+  console.log('==================');
 });
 
 // =====================================
