@@ -12,7 +12,7 @@ const deleteFile = util.promisify(fs.unlink);
 
 var request = require('request');
 var options = {
-  url: 'https://api.github.com/repos/hbz/swib18-workshop',
+  url: 'https://api.github.com/repos/hbz/elag2019-bootcamp',
   headers: { 'User-Agent': 'fsteeg' }
 };
 request(options, (error, response, body) => {
