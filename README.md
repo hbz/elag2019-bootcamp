@@ -142,12 +142,12 @@ Start the box. If it doesn't come up with a GUI you may have to install the "vir
 
 #### Load the virtual machine into VirtualBox
 
-Download the VirtualBox: http://labs.lobid.org/download/2019-elag-vm.tar.gz (~ 4 GB).
+Download the VirtualBox: http://labs.lobid.org/download/2019-elag-vm.zip (~ 4 GB).
 Make sure you've got around at least 9 GB free space).
 
 Unpack:
 
-`tar xfz 2019-elag-vm.tar.gz`
+`unzip 2019-elag-vm.zip`
 
 Decompressing takes about 2 minutes, depending on your hardware.
 Start the VirtualBox.
