@@ -2,11 +2,12 @@ version: '3'
 # kernel memory on the host needs to be configured before running
 # use: 'sudo sysctl -w vm.max_map_count=2621441'
 services:
-  swibws:
+  elag2019-bootcamp:
     build: .
     volumes:
-      - ./data:/home/loud/swib18-workshop/data
+      - ./data:/home/loud/docker-workshop/data
     ports:
       - "3000:3000"
+      - "3333:3333"
       - "5601:5601"
       - "9200:9200"
