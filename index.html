@@ -134,7 +134,7 @@
 					<img src="img/lobid.png" style="border: none; box-shadow: none;background-color: white; height: 100px; padding:10px" />
 					<p><span class="fragment">lobid: hbz's LOD service, providing bibliographic data, authorities &amp; organizations</span></p>
 					<p><span class="fragment">Started 2010 with open data publication, triple store &amp; Perl transformation script</span></p>
-					<p><span class="fragment">Original team: Adrian, Pascal, Felix. Fabian joined in 2012.</span></p>
+					<p><span class="fragment">Original team: Adrian, Pascal, Felix. Fabian joined in 2012</span></p>
 					<p><span class="fragment">2013: First API release based on JSON-LD &amp; Elasticsearch</span></p>
 					<p><span class="fragment">2017&ndash;2018: LOUD with lobid API 2.0</span></p>
 					<span class="fragment"><h4><a href="http://lobid.org/team">http://lobid.org/team</a> | <a href="http://blog.lobid.org">http://blog.lobid.org</a></h4></span>
@@ -181,7 +181,7 @@
 					<table>
 						<tr><th width="38%"/><th width="39%"/><th width="25%"/></tr>
 						<tr><td><b>Usable data & APIs</b></td><td>Application Programming Interfaces: why, how</td><td>10:15–10:30</td></tr>
-						<tr><td><b>JSON APIs</b></td><td>Using the GitHub API, processing JSON</td><td>10:30–10:45</td></tr>
+						<tr><td><b>JSON APIs</b></td><td>Using web APIs, processing JSON</td><td>10:30–10:45</td></tr>
 						<tr><td><b>From RDF to JSON</b></td><td>JSON-LD processing with jsonld.js via jsonld-cli</td><td>10:45–11:30</td></tr>
 					</table>
 				</section>
@@ -396,10 +396,10 @@ $ curl "https://lobid.org/organisations/DE-1a" | jq &lt;???&gt; # get the Englis
 									</td>
 								</tr>
 								<tr>
-									<td>Opening Hours</td>
+									<td>Modified</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl "https://lobid.org/organisations/DE-1a" | jq &lt;???&gt; # get the opening hours description
+$ curl "https://lobid.org/organisations/DE-1a" | jq &lt;???&gt; # get the entry's modification date
 										</code></pre>
 									</td>
 								</tr>
@@ -423,10 +423,10 @@ $ curl "https://lobid.org/organisations/DE-1a" | jq .fundertype.label.en
 									</td>
 								</tr>
 								<tr>
-									<td>Opening Hours</td>
+									<td>Modified</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl "https://lobid.org/organisations/DE-1a" | jq .location[].openingHoursSpecification.description
+$ curl "https://lobid.org/organisations/DE-1a" | jq .mainEntityOfPage.dateModified
 										</code></pre>
 									</td>
 								</tr>
