@@ -19,7 +19,9 @@
 		<script type="application/ld+json">
 		{
 			"@context": "http://schema.org",
+			"id" : "https://hbz.github.io/elag2019-bootcamp/",
 			"type": "PresentationDigitalDocument",
+			"isBasedOn": "https://hbz.github.io/swib18-workshop/",
 			"name" : "From LOD to LOUD: building and using JSON-LD APIs",
 			"creator" : [{
 				"id": "http://lobid.org/team/ap#!",
@@ -38,7 +40,6 @@
 			}],
 			"description": "These are the accompanying slides for the ELAG 2019 Bootcamp \"From LOD to LOUD: building and using JSON-LD APIs\".",
 			"about" : [ "lobid", "libraries", "linked open data", "APIs", "JSON-LD" ],
-			"url" : "https://hbz.github.io/elag2019-bootcamp/#/",
 			"datePublished" : "2019-05-07",
 			"inLanguage" : "en",
 			"audience": [ "librarians", "developers" ],
@@ -795,11 +796,11 @@ $ cat loc-framed.json | jq &lt;???&gt;
 
 					<section data-state="adrian">
 						<h1>Describing values</h1>
-						<span class="fragment"><p>e.g. field 'contribution' should always be a JSON array</p></span>
+						<span class="fragment"><p>e.g. type coercion for field 'creationDate'</p></span>
 						<span class="fragment"><pre><code class="javascript" data-trim>
-"contribution": {
-  "@id": "http://id.loc.gov/ontologies/bibframe/contribution",
-  "@container": "@set"
+"creationDate": {
+  "@id": "http://id.loc.gov/ontologies/bibframe/creationDate",
+  "@type": "http://www.w3.org/2001/XMLSchema#date"
 }
 						</pre></code></span>
 						<span class="fragment"><p><a href="https://www.w3.org/TR/json-ld11/#describing-values">See context specification for details</a></p></span>
@@ -1111,7 +1112,7 @@ $ cat loc-compact.json | jq .title.subtitle
 &lt;https://github.com/users/hbz&gt; &lt;https://schema.org/url&gt; \
 &lt;https://www.hbz-nrw.de&gt; .
 					</code></pre>
-					<p>Output of N-Quads tab in the <a href='https://json-ld.org/playground/'>JSON-LD Playground</a></p>
+					<p>Output of N-Quads tab in the <a href='http://tinyurl.com/y3uwyp4z'>JSON-LD Playground</a></p>
 					</section>
 
 					<section data-state="fabian">
@@ -2528,36 +2529,10 @@ Educational interests of Colorado
 					</section>
 
 					<section data-state="adrian">
-						<h2>Question from #eubfws2018</h2>
-						<a href="http://www.casalini.it/EBW2018/web_content/2018/presentations/Hubay.pdf"><img src="img/hubay-2018-bf-8.png" width=800 /></a>
-						<small><font size="3">Source: <br/><a href="http://www.casalini.it/EBW2018/web_content/2018/presentations/Hubay.pdf">Miklós Hubay, "The Past, the Present &amp; the
-					Future of the Semantic Web &amp; BIBFRAME in National Széchényi Library, Hungary"</a></font></small>
-					</section>
-
-					<section data-state="adrian">
-						<h1>LOUD is more than a nice JSON-LD API</h1>
-						<p><span class="fragment">(But a nice JSON-LD API is LOUDer than an RDF file)</span></p>
-					</section>
-
-					<section data-state="adrian">
-						<h2>Let's recall</h2>
-						<a href="https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud/32"><img src="img/sanderson-2018-loud-32.png" width=800 /></a>
-						<p><font size="3">Source: <a href="https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud">Rob Sanderson, "Shout it Out: LOUD"</a>, CC-BY</font></p>
-					</section>
-
-					<section data-state="adrian">
-						<h2>Bibframe, from LOD to LOUD?</h2>
-						<a href="https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud/32"><img src="img/sanderson-2018-loud-32-checked.png" width=800 /></a>
-						<p><font size="3">Source: <a href="https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud">Rob Sanderson, "Shout it Out: LOUD"</a>, CC-BY</font></p>
-					</section>
-
-					<section data-state="adrian">
-						<blockquote><h1><a href='https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud/32'>1. </a>Require use cases, with data</h1></blockquote>
-					</section>
-
-					<section data-state="adrian">
-						<h1>Code for exercises and HTML for slides available on the web</h1>
+						<h4>Code for exercises and HTML for slides:</h4>
 						<p><a href="https://github.com/hbz/elag2019-bootcamp/">https://github.com/hbz/elag2019-bootcamp/</a></p>
+						<h4>Blog post "Indexing the Bibframe works dataset as JSON-LD":</h4>
+						<p><a href="http://blog.lobid.org/2019/01/31/bibframe-dataset.html">http://blog.lobid.org/2019/01/31/bibframe-dataset.html</a></p>
 						<p><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="img/cc-by.png" title="Licensed under a Creative Commons Attribution 4.0 International License"></a></p>
 					</section>
 			</div>
