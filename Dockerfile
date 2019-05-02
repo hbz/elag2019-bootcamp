@@ -34,7 +34,7 @@ RUN wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | apt-key add 
 RUN apt-get -y install apt-transport-https
 
 # Note: elasticsearch requires java runtime environment
-RUN apt-get install -y openjdk-11-jre-headless
+RUN apt-get install -y openjdk-8-jre-headless
 
 # now install elasticsearch
 RUN echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-6.x.list
@@ -54,6 +54,12 @@ RUN git clone https://github.com/hbz/elag2019-bootcamp.git
 
 WORKDIR /home/loud/elag2019-bootcamp
 RUN npm install
+
+# install OpenRefine
+RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefine-linux-3.1.tar.gz
+RUN tar xzf openrefine-linux-3.1.tar.gz
+RUN cd openrefine-3.1
+RUN ./refine &
 
 # set default host to 0.0.0.0
 RUN sed -i "s|const hostname = '127.0.0.1'|const hostname = '0.0.0.0'|g" /home/loud/elag2019-bootcamp/js/app.js
