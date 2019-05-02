@@ -24,17 +24,13 @@ In this bootcamp, we will:
 - Document the data with Hypothesis annotations
 - Use the data with OpenRefine
 
-## Location
-
-tbd
-
 ## Setup
 
 There are three options:
 
 1. [Install all tools locally into your own operating system (OS)](#local-installation)
-2. [Install _VirtualBox_ and use the virtual machine we provide](#virtualbox)
-3. Warning: experimental, needs some more work (hey docker experts!): for the command-line exercises (part I and II): [Use docker](#docker) (thanks [@EnnoMeijers](https://github.com/EnnoMeijers))
+2. [Install VirtualBox and use the virtual machine we provide](#virtualbox)
+3. [Use Docker](#docker) (thanks [@EnnoMeijers](https://github.com/EnnoMeijers)) (Warning: only tested for command line exercises, i.e. part I and II)
 
 ### Local installation
 
@@ -120,9 +116,9 @@ Go to the repo:
 
 Install dependencies:
 
-`sudo apt install g++`
-
 `npm install`
+
+(If this fails: `sudo apt install g++` and try again)
 
 Run the server (in `js/app.js`):
 
@@ -142,7 +138,7 @@ Start the box. If it doesn't come up with a GUI you may have to install the "vir
 
 #### Load the virtual machine into VirtualBox
 
-Download the VirtualBox: http://labs.lobid.org/download/2019-elag-vm.zip (~ 4 GB).
+Download the VirtualBox: http://labs.lobid.org/download/2019-elag-vm.zip (~ 3 GB).
 Make sure you've got around at least 9 GB free space).
 
 Unpack:
@@ -171,20 +167,19 @@ The README.txt gives some useful notes, e.g. if you are using a different layout
 `cat README.txt` (or double click on the desktop's icon).
 
 ### Docker
-_Warning_: there are some issues here - if you know docker you may help us to make this working.
-
-Install docker:
-[follow these instructions](https://docs.docker.com/v17.09/engine/installation/)
 
 Install docker-compose:
-[follow these instructions](https://github.com/docker/compose/releases)
+
+`sudo apt install docker-compose`
+
+(Or follow these instructions to [install docker-compose](https://github.com/docker/compose/releases) and [install docker](https://docs.docker.com/v17.09/engine/installation/))
 
 Start the container:
 
-`docker-compose up`
+`sudo docker-compose up`
 
 In a new terminal, run a bash in the container:
 
-`docker exec -it elag2019bootcamp_elag2019-bootcamp_1 bash`
+`sudo docker exec -it elag2019-bootcamp_elag2019-bootcamp_1 bash`
 
 Here you can run the command-line exercises from part I and II.
