@@ -34,7 +34,7 @@ There are three options:
 
 1. [Install all tools locally into your own operating system (OS)](#local-installation)
 2. [Install _VirtualBox_ and use the virtual machine we provide](#virtualbox)
-3. For the command-line exercises (part I and II): [Use docker](#docker) (thanks [@EnnoMeijers](https://github.com/EnnoMeijers))
+3. Warning: experimental, needs some more work (hey docker experts!): for the command-line exercises (part I and II): [Use docker](#docker) (thanks [@EnnoMeijers](https://github.com/EnnoMeijers))
 
 ### Local installation
 
@@ -44,15 +44,15 @@ With sample commands for Debian-based Linux systems, follow links for others.
 
 Install [git](https://git-scm.com/):
 
-`apt install git`
+`sudo apt install git`
 
 Install [cURL](https://curl.haxx.se/download.html):
 
-`apt install curl`
+`sudo apt install curl`
 
 Install [jq](https://stedolan.github.io/jq/download/):
 
-`apt install jq`
+`sudo apt install jq`
 
 #### Node.js
 
@@ -60,7 +60,7 @@ Install [node](https://nodejs.org/en/download/) (8.x or higher):
 
 `curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -`
 
-`apt install -y nodejs`
+`sudo apt install -y nodejs`
 
 #### jsonld-cli
 
@@ -80,7 +80,7 @@ Install [Elasticsearch](https://www.elastic.co/guide/en/elasticsearch/reference/
 
 `wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -`
 
-`apt install apt-transport-https`
+`sudo apt install apt-transport-https`
 
 `echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-6.x.list`
 
@@ -93,6 +93,10 @@ Wait a few seconds for Elasticsearch to start up, then open [http://localhost:92
 #### OpenRefine
 
 See [http://openrefine.org/download.html](http://openrefine.org/download.html)
+
+Then start it:
+
+`cd openrefine-3.1/; ./refine`
 
 #### Kibana
 
@@ -108,13 +112,15 @@ Wait a few seconds for Kibana to start up, then open [http://localhost:5601](htt
 
 Clone the repo:
 
-`git clone https://github.com/hbz/swib18-workshop.git`
+`git clone https://github.com/hbz/elag2019-bootcamp.git`
 
 Go to the repo:
 
-`cd swib18-workshop`
+`cd elag2019-bootcamp`
 
 Install dependencies:
+
+`sudo apt install g++`
 
 `npm install`
 
@@ -136,38 +142,42 @@ Start the box. If it doesn't come up with a GUI you may have to install the "vir
 
 #### Load the virtual machine into VirtualBox
 
-⚠ *Virtual machine for ELAG bootcamp has to be added ([#3](https://github.com/hbz/elag2019-bootcamp/issues/3)) & links have to be updated* ⚠
-
-Download the 7z-archived (or zipped) virtual machine from [http://labs.lobid.org/download/](http://labs.lobid.org/download/). The size of the packed file is 2.4 GB (3 GB for the zip), unpacked it's 7.5 GB (so make sure you have got around at least 10 GB free space). To decompress the 7z-archived file you need the [7z archiver](https://www.7-zip.org/download.html).
-
-Installation on Debian-based Linux:
-
-`sudo apt install p7zip`
+Download the VirtualBox: http://labs.lobid.org/download/2019-elag-vm.tar.gz (~ 4 GB).
+Make sure you've got around at least 9 GB free space).
 
 Unpack:
 
-`7z x swib_2018-Workshop_VBox.7z`
+`tar xfz 2019-elag-vm.tar.gz`
 
-Decompressing takes about 5 minutes, depending on your hardware. To set it up in your VirtualBox:
+Decompressing takes about 2 minutes, depending on your hardware.
+Start the VirtualBox.
+
+To load the 2019-elag-vm into your VirtualBox, set it up in your VirtualBox:
 
 - Menu -> Machine -> Add...
-- Select the Swib_2018-Workshop_LOUD.vbox file
+- Browse to the extracted folder and select the 2019-elag-vm.vbox file
 
-When you are finished, a virtual machine should appear in the VirtualBox. Start the machine. A new window should appear with Ubuntu booting until you see the graphical login manager. If you get a "kernel panic" instead, try to [enable virtualization in your BIOS or EFI](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/).
+When you are finished, a virtual machine should appear in the VirtualBox. Start the machine. A new window should appear with debian booting until you see the graphical login manager. If you get a "kernel panic" or "VT-x/AMD-V hardware acceleration is not available on your system" try to [enable virtualization in your BIOS or EFI](https://www.howtogeek.com/213795/how-to-enable-intel-vt-x-in-your-computers-bios-or-uefi-firmware/) or read more about [possible causes and solutions](https://appuals.com/fix-vt-x-amd-v-hardware-acceleration-is-not-available-on-your-system/).
 
 #### Configs of your virtual machine
 
-The password for the user _I_ is "12345".
+The password for the user _i_ is "12345".
 
-*Note*: the keyboard-layout is preconfigured to German. If you want to change this: click on the blue-white icon in the top left corner under "machine", choose "settings" on the right bottom, select "Keyboard" on the left side. Click on the "Layout" tab, unclick the "Use system defaults", "Add" the keyboard layout you need, then push it to first position by selecting that layout and clicking on the arrows. Close the window, you are done.
+*Note*: the keyboard-layout is preconfigured to English. If you want to change this to e.g. German type into the terminal:
+`setxkbmap -layout de`
+(to get a list of possible layouts: `man xkeyboard-config`)
 
-Normally it's possible to copy 'n' paste between your "normal" OS (aka "host") and the "guest" (the Ubuntu machine). While it's not a mandatory feature it may be handy. If that's not working and you feel you need it: you need to install the ["Guest Additions"](https://www.virtualbox.org/manual/ch03.html#settings-general-advanced).
+The README.txt gives some useful notes, e.g. if you are using a different layout than the mentioned one, how to copy & paste etc, how to start services etc.:
+`cat README.txt` (or double click on the desktop's icon).
 
 ### Docker
+_Warning_: there are some issues here - if you know docker you may help us to make this working.
+
+Install docker:
+[follow these instructions](https://docs.docker.com/v17.09/engine/installation/)
 
 Install docker-compose:
-
-`apt install docker-compose`
+[follow these instructions](https://github.com/docker/compose/releases)
 
 Start the container:
 
@@ -175,6 +185,6 @@ Start the container:
 
 In a new terminal, run a bash in the container:
 
-`docker exec -it swib18workshop_swibws_1 bash`
+`docker exec -it elag2019bootcamp_elag2019-bootcamp_1 bash`
 
 Here you can run the command-line exercises from part I and II.
