@@ -273,7 +273,8 @@
 				<section data-state="pascal">
 					<h1>Setup</h1>
 					<span class="fragment"><p><a href='https://github.com/hbz/elag2019-bootcamp#setup'>https://github.com/hbz/elag2019-bootcamp#setup</a></p></span>
-					<span class="fragment"><p>($ git pull origin master)</p></span>
+					<span class="fragment"><p>($ git pull origin master)
+						<font size="5"></br>('$' <i>means you should type this in your terminal application</i>)</font></p></span>
 				</section>
 
 				<section data-state="pascal">
@@ -282,7 +283,6 @@
 					<p><span class="fragment"><a href="https://curl.haxx.se/download.html" target="_blank">https://curl.haxx.se/download.html</a></span></p>
 					<span class="fragment">
 						<pre><code class="bash">$ curl --help</code></pre>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</span>
 				</section>
 
@@ -320,7 +320,7 @@ $ curl "https://lobid.org/organisations/DE-1a"
 									</tr>
 								</tbody>
 							</table>
-						<p><font size="5"><i>(You can copy and paste in the terminal with Shift+Ctrl+C and Shift+Ctrl+V)</i></font></p>
+						<p><font size="5"><i>(To copy & paste from/to GUI applications like your browser use (left!) CTRL+c resp. CTRL+v. You can copy and paste into the terminal with SHIFT+CTRL+c and SHIFT+CTRL+v. )</i></font></p>
 					</section>
 
 					<section data-state="pascal">
@@ -348,8 +348,7 @@ $ curl https://lobid.org/organisations/DE-1a
 						<h2>JavaScript Object Notation (JSON)</h2>
 						<span class="fragment"><pre><code class="javascript" data-trim>
 var options = {
-  url: 'https://lobid.org/organisations/DE-1a',
-  headers: { 'User-Agent': 'hbz' }
+  url: 'https://lobid.org/organisations/DE-1a'
 };
 
 request(options, function (error, response, body) {
@@ -369,7 +368,6 @@ request(options, function (error, response, body) {
 						<p><span class="fragment"><a href="https://jqplay.org/">https://jqplay.org/</a></span></p>
 						<span class="fragment">
 							<pre><code class="bash">$ jq --help</code></pre>
-							<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 						</span>
 					</section>
 
@@ -379,7 +377,6 @@ request(options, function (error, response, body) {
 $ curl "https://lobid.org/organisations/DE-1a" \
 | jq .name # filter: .name
 						</code></pre>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="pascal">
@@ -406,7 +403,6 @@ $ curl "https://lobid.org/organisations/DE-1a" | jq &lt;???&gt; # get the entry'
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('&lt;???&gt;' <i>means you should insert your solution here</i>)</font></p>
 					</section>
 
 					<section data-state="pascal">
@@ -433,7 +429,6 @@ $ curl "https://lobid.org/organisations/DE-1a" | jq .mainEntityOfPage.dateModifi
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -484,7 +479,6 @@ $ curl "https://lobid.org/organisations/DE-1a" | jq .mainEntityOfPage.dateModifi
 						<p><span class="fragment">Our fork of https://github.com/digitalbazaar/jsonld-cli, added import from N-Quads</p>
 						<span class="fragment">
 							<pre><code class="bash">$ jsonld --help</code></pre>
-							<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 						</span>
 					</section>
 
@@ -520,7 +514,6 @@ $ jsonld import loc.nt > loc.json
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="fabian">
@@ -710,7 +703,6 @@ $ jsonld frame -f frame.json loc.json > loc-framed.json
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="fabian">
@@ -830,7 +822,6 @@ $ jsonld compact -c context.json loc-framed.json > loc-compact.json
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -886,7 +877,6 @@ $ cat loc-compact.json | jq &lt;???&gt;
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -922,7 +912,6 @@ $ cat loc-compact.json | jq .subject[].label
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -972,7 +961,6 @@ $ jsonld compact -c context.json loc-framed.json > loc-compact.json
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -1015,7 +1003,6 @@ $ jsonld format -q data/loc-compact.json
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -1042,7 +1029,6 @@ $ cat loc-compact.json | jq .title.subtitle
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="fabian">
@@ -1183,7 +1169,6 @@ $ jsonld compact &lt;???&gt;
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="pascal">
@@ -1218,7 +1203,6 @@ $ jsonld compact -c context.json loc-100-framed.json > loc-100-compact.json
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="fabian">
@@ -1278,7 +1262,6 @@ $ cat loc-100-compact.json | jq -c '.["@graph"][]'
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 						<span class="fragment"><p>Second line for each pair in bulk.ndjson: 1 doc in 1 line</p></span>
 					</section>
 
@@ -1355,7 +1338,6 @@ $ cat loc-100-compact.json | jq -r \
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="fabian">
@@ -1404,7 +1386,6 @@ $ curl localhost:9200/loc/work/_search | jq
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 						<span class="fragment"><p><a href='http://localhost:9200/loc/work/_search'>http://localhost:9200/loc/work/_search</a></p></span>
 					</section>
 
@@ -1465,7 +1446,6 @@ $ curl localhost:9200/loc/work/_search?q=&lt;???&gt; | jq
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('&lt;???&gt;' <i>means you should insert your solution here</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -1508,7 +1488,6 @@ $ curl localhost:9200/loc/work/_search?q=ameri* | jq
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -1592,7 +1571,6 @@ $ curl \
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('&lt;???&gt;' <i>means you should insert your solution here</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -1621,7 +1599,6 @@ $ curl "localhost:9200/loc/work/c000000026/_source" \
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="adrian">
@@ -1703,7 +1680,6 @@ $ curl http://localhost:3000/context.json | jq
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="fabian">
@@ -1777,7 +1753,6 @@ $ jsonld format -q http://localhost:9200/loc/work/c000000026/_source
 								</tr>
 							</tbody>
 						</table>
-						<p><font size="5">('$' <i>means you should type this in your terminal application</i>)</font></p>
 					</section>
 
 					<section data-state="fabian">
