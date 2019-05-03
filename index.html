@@ -787,6 +787,18 @@ $ cat loc-framed.json | jq &lt;???&gt;
 					</section>
 
 					<section data-state="adrian">
+						<h1>Array as default</h1>
+						<span class="fragment"><p>e.g. field 'contribution' should always be a JSON array</p></span>
+						<span class="fragment"><pre><code class="javascript" data-trim>
+"contribution": {
+  "@id": "http://id.loc.gov/ontologies/bibframe/contribution",
+  "@container": "@set"
+}
+						</pre></code></span>
+						<span class="fragment"><p><a href="https://www.w3.org/TR/json-ld11/#describing-values">See context specification for details</a></p></span>
+					</section>
+
+					<section data-state="adrian">
 						<h1>Describing values</h1>
 						<span class="fragment"><p>e.g. type coercion for field 'creationDate'</p></span>
 						<span class="fragment"><pre><code class="javascript" data-trim>
