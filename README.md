@@ -182,4 +182,8 @@ In a new terminal, run a bash in the container:
 
 `sudo docker exec -it elag2019-bootcamp_elag2019-bootcamp_1 bash`
 
+Depending on your setup, your container might be called `elag2019bootcamp_elag2019-bootcamp_1` or `elag2019-bootcamp_elag2019-bootcamp_1`. Check the output of the `sudo docker-compose up` command (first line, e.g. `Starting elag2019bootcamp_elag2019-bootcamp_1 ...`).
+
 Here you can run the command-line exercises from part I and II.
+
+Services running in the container are available on the host (like Elasticsearch running on http://localhost:9200/).
