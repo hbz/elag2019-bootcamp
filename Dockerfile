@@ -59,7 +59,7 @@ RUN npm install
 RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefine-linux-3.1.tar.gz
 RUN tar xzf openrefine-linux-3.1.tar.gz
 RUN cd openrefine-3.1
-RUN ./refine &
+# RUN ./refine & # enable port in docker-compose.yml too
 
 # set default host to 0.0.0.0
 RUN sed -i "s|const hostname = '127.0.0.1'|const hostname = '0.0.0.0'|g" /home/loud/elag2019-bootcamp/js/app.js
