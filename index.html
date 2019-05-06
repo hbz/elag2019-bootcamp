@@ -521,15 +521,15 @@ $ jsonld import loc.nt > loc.json
 					<pre><code class="json" data-trim>
 {
  "@id": "http://id.loc.gov/resources/works/c000101650",
+ "@type": [
+   "http://id.loc.gov/ontologies/bibframe/Work",
+   "http://id.loc.gov/ontologies/bibframe/Text"
+ ],
  "http://id.loc.gov/ontologies/bibframe/subject": [{
   "@id": "http://id.loc.gov/resources/works/101650#Topic650-20"
  }, ...]
 }, {
  "@id": "http://id.loc.gov/resources/works/101650#Topic650-20",
- "@type": [
-  "http://id.loc.gov/ontologies/bibframe/Topic",
-  "http://www.loc.gov/mads/rdf/v1#ComplexSubject"
- ],
  "http://www.w3.org/2000/01/rdf-schema#label": [{
   "@value": "Climatic changes--Europe."
  }],...
@@ -581,15 +581,15 @@ $ cat loc.json | jq &lt;???&gt;
 					<pre><code class="json" data-trim>
 {
  "@id": "http://id.loc.gov/resources/works/c000101650",
+ "@type": [
+   "http://id.loc.gov/ontologies/bibframe/Work",
+   "http://id.loc.gov/ontologies/bibframe/Text"
+ ],
  "http://id.loc.gov/ontologies/bibframe/subject": [{
   "@id": "http://id.loc.gov/resources/works/101650#Topic650-20"
  }, ...]
 }, {
  "@id": "http://id.loc.gov/resources/works/101650#Topic650-20",
- "@type": [
-  "http://id.loc.gov/ontologies/bibframe/Topic",
-  "http://www.loc.gov/mads/rdf/v1#ComplexSubject"
- ],
  "http://www.w3.org/2000/01/rdf-schema#label": [{
   "@value": "Climatic changes--Europe."
  }],...
@@ -609,7 +609,7 @@ $ cat loc.json | jq &lt;???&gt;
 									<td>
 										<pre><code class="javascript" data-trim>
 for o in doc :
-		if o["@type"] contains "http://id.loc.gov/ontologies/bibframe/Topic" :
+		if o["@type"] contains "http://id.loc.gov/ontologies/bibframe/Work" :
 			subjectId = o["http://id.loc.gov/ontologies/bibframe/subject"][0]["@id"] // + error handling
 
 for o in doc :
