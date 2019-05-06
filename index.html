@@ -769,17 +769,17 @@ $ cat loc-framed.json | jq &lt;???&gt;
 					<section data-state="adrian">
 						<h1>How do we get the context?</h1>
 						<span class="fragment"><p><a href="https://twitter.com/lobidOrg/status/1044866797067997184">Does LOC or somebody else already provide one?</a> – No.</p></span>
-						<span class="fragment"><p><a href="https://github.com/hbz/elag2019-bootcamp/issues/2#issuecomment-424710995">Here: context generated from ontologies</a>  with (much) manual post-processing</p></span>
+						<span class="fragment"><p>Here: <a href="https://github.com/hbz/elag2019-bootcamp/blob/master/data/context.json">context</a> generated from ontologies  with (much) manual post-processing</p></span>
 						<span class="fragment"><p>Alternatives: upfront design or generate from data</p></span>
 					</section>
 
 					<section data-state="adrian">
 						<h1>Context: more than simple mappings</h1>
-						<span class="fragment"><p><blockquote><a href='https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud/22'>&starf;</a> Few exceptions, many consistent patterns</blockquote></p></span>
 					</section>
 
 					<section data-state="adrian">
 						<h1>Consistency</h1>
+						<span class="fragment"><p><blockquote><a href='https://www.slideshare.net/azaroth42/europeanatech-keynote-shout-it-out-loud/22'>&starf;</a> Few exceptions, many consistent patterns</blockquote></p></span>
 						<span class="fragment"><p>e.g. the <i>contribution</i> field should always be an array, even if a particular record has only one contribution | <a href='https://www.w3.org/TR/json-ld11/#sets'>spec</a></p></span>
 						<span class="fragment"><p>Other fields, which occur only once for every record can use the default non-array single values</p></span>
 						<span class="fragment"><p>To have all fields always be arrays: compacting option <a href='https://www.w3.org/TR/json-ld11-api/#dom-jsonldoptions-compactarrays'>compactArrays:false</a></p></span>
@@ -799,15 +799,16 @@ $ cat loc-framed.json | jq &lt;???&gt;
 					</section>
 
 					<section data-state="adrian">
-						<h1>Describing values</h1>
-						<span class="fragment"><p>e.g. type coercion for field 'creationDate'</p></span>
+						<h2>Simplicity: move definitions from data to context</h2>
+						<span class="fragment"><p>e.g. data typing with "type coercion"</p></span>
 						<span class="fragment"><pre><code class="javascript" data-trim>
 "creationDate": {
   "@id": "http://id.loc.gov/ontologies/bibframe/creationDate",
   "@type": "http://www.w3.org/2001/XMLSchema#date"
 }
 						</pre></code></span>
-						<span class="fragment"><p><a href="https://www.w3.org/TR/json-ld11/#describing-values">See context specification for details</a></p></span>
+						<span class="fragment"><p>(Works similar for language tags)</p></span>
+						<span class="fragment"><p><a href="https://www.w3.org/TR/json-ld11/#describing-values">See specification for details</a></p></span>
 					</section>
 
 					<section data-state="adrian">
