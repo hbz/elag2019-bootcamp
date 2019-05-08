@@ -30,7 +30,7 @@ There are three options:
 
 1. [Install all tools locally into your own operating system (OS)](#local-installation)
 2. [Install VirtualBox and use the virtual machine we provide](#virtualbox)
-3. [Use Docker](#docker) (thanks [@EnnoMeijers](https://github.com/EnnoMeijers)) (Warning: OpenRefine in the container does not work. A local OpenRefine installation talking to the container should work, but this is not fully tested. If you're a Docker and/or OpenRefine expert we'd be happy about a contribution to fix this.)
+3. [Use Docker](#docker) (thanks [@EnnoMeijers](https://github.com/EnnoMeijers) & [@mjtecka](https://github.com/mjtecka))
 
 ### Local installation
 
@@ -183,7 +183,5 @@ In a new terminal, run a bash in the container:
 `sudo docker exec -it elag2019-bootcamp_elag2019-bootcamp_1 bash`
 
 Depending on your setup, your container might be called `elag2019bootcamp_elag2019-bootcamp_1` or `elag2019-bootcamp_elag2019-bootcamp_1`. Check the output of the `sudo docker-compose up` command (first line, e.g. `Starting elag2019bootcamp_elag2019-bootcamp_1 ...`).
-
-Here you can run the command-line exercises from part I and II.
 
 Services running in the container are available on the host (like Elasticsearch running on http://localhost:9200/).

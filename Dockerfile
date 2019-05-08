@@ -55,14 +55,14 @@ RUN git clone https://github.com/hbz/elag2019-bootcamp.git
 WORKDIR /home/loud/elag2019-bootcamp
 RUN npm install
 
-# install OpenRefine
-RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefine-linux-3.1.tar.gz
-RUN tar xzf openrefine-linux-3.1.tar.gz
-RUN cd openrefine-3.1
-# RUN ./refine & # enable port in docker-compose.yml too
-
 # set default host to 0.0.0.0
 RUN sed -i "s|const hostname = '127.0.0.1'|const hostname = '0.0.0.0'|g" /home/loud/elag2019-bootcamp/js/app.js
 
 # start all services 
-CMD service elasticsearch start && service kibana start && npm start
+CMD service elasticsearch start && service kibana start && npm start &
+
+# install OpenRefine
+RUN wget https://github.com/OpenRefine/OpenRefine/releases/download/3.1/openrefine-linux-3.1.tar.gz
+RUN tar xzf openrefine-linux-3.1.tar.gz
+RUN mkdir /mnt/refine
+CMD ["openrefine-3.1/refine", "-i", "0.0.0.0", "-d", "/mnt/refine"]
