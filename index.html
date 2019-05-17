@@ -548,7 +548,7 @@ $ jsonld import loc.nt > loc.json
 									<td>Identify field</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ cat loc.json | less
+$ cat loc.json
 										</code></pre>
 									</td>
 								</tr>
@@ -734,7 +734,7 @@ $ jsonld frame -f frame.json loc.json > loc-framed.json
 									<td>Identify field</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ cat loc-framed.json | less
+$ cat loc-framed.json
 										</code></pre>
 									</td>
 								</tr>
@@ -867,7 +867,7 @@ $ jsonld compact -c context.json loc-framed.json > loc-compact.json
 									<td>Identify field</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ cat loc-compact.json | less
+$ cat loc-compact.json
 										</code></pre>
 									</td>
 								</tr>
@@ -986,7 +986,7 @@ $ jsonld compact -c context.json loc-framed.json > loc-compact.json
 									<td>Identify fields</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ cat loc-compact.json | less
+$ cat loc-compact.json
 										</code></pre>
 									</td>
 								</tr>
@@ -1362,7 +1362,7 @@ $ cat loc-100-compact.json | jq -r \
 					<section data-state="pascal">
 						<p>Setup</p>
 						<blockquote><h1>You Know,<br/> for Search</h1></blockquote>
-						<p><a href='http://localhost:9200'>http://localhost:9200</a></p>
+						<p><code>$ curl localhost:9200</code></p>
 					</section>
 
 					<section data-state="pascal">
@@ -1417,7 +1417,7 @@ $ curl localhost:9200/loc/work/_search | jq
 					</section>
 
 					<section data-state="adrian">
-						<h2>Exercise 10a: Query syntax</h2>
+						<h2>Exercise 10: Query syntax</h2>
 						<table style="border: 1px solid white; table-layout:fixed; width: 100%">
 							<col width="15%" />
 							<col width="85%" />
@@ -1462,7 +1462,7 @@ $ curl localhost:9200/loc/work/_search?q=&lt;???&gt; | jq
 					</section>
 
 					<section data-state="adrian">
-						<h2>Exercise 10b: Solutions</h2>
+						<h2>Exercise 10: Solutions</h2>
 						<table style="border: 1px solid white; table-layout:fixed; width: 100%">
 							<col width="15%" />
 							<col width="85%" />
@@ -1479,7 +1479,7 @@ $ curl localhost:9200/loc/work/_search?q=america | jq
 									<td>Field search</td>
 									<td>
 										<pre><code class="bash" data-trim>
-$ curl localhost:9200/loc/work/_search?q=label:letters | jq
+$ curl localhost:9200/loc/work/_search?q=subject.label:education | jq
 										</code></pre>
 									</td>
 								</tr>
