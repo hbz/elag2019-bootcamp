@@ -15,14 +15,8 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y make
 RUN apt-get install -y g++
 
-# install node (8.x or higher):
-RUN curl -sL https://deb.nodesource.com/setup_8.x > setup_8.x
-RUN sync
-#RUN chmod 755 ./setup_8.x && ./setup_8.x
-RUN chmod 755 ./setup_8.x 
-RUN sync
-RUN ./setup_8.x
-RUN apt-get install -y nodejs
+# install node:
+RUN apt-get install -y npm
 
 # install the hbz jsonld-cli fork:
 RUN git clone https://github.com/hbz/jsonld-cli.git
