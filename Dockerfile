@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM ubuntu:18:04
 
 WORKDIR /home/loud
 ENV DEBIAN_FRONTEND noninteractive
@@ -15,14 +15,14 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y make
 RUN apt-get install -y g++
 
-# install node:
-ENV NVM_DIR /usr/local/nvm
-ENV NODE_VERSION v18.16.1
-RUN mkdir -p /usr/local/nvm && apt-get update && echo "y" | apt-get install curl
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-RUN /bin/bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION && nvm use --delete-prefix $NODE_VERSION"
-ENV NODE_PATH $NVM_DIR/versions/node/$NODE_VERSION/bin
-ENV PATH $NODE_PATH:$PATH
+# install node (8.x or higher):
+RUN curl -sL https://deb.nodesource.com/setup_8.x > setup_8.x
+RUN sync
+#RUN chmod 755 ./setup_8.x && ./setup_8.x
+RUN chmod 755 ./setup_8.x 
+RUN sync
+RUN ./setup_8.x
+RUN apt-get install -y nodejs
 
 # install the hbz jsonld-cli fork:
 RUN git clone https://github.com/hbz/jsonld-cli.git
