@@ -39,6 +39,7 @@ RUN apt-get install -y openjdk-8-jre-headless
 # now install elasticsearch
 RUN echo "deb https://artifacts.elastic.co/packages/6.x/apt stable main" | tee -a /etc/apt/sources.list.d/elastic-6.x.list
 RUN apt-get -y update  && apt-get install -y elasticsearch
+RUN systemctl start elasticsearch.service
 
 # set default host to 0.0.0.0
 RUN sed -i "s|#network.host: 192.168.0.1|network.host: 0.0.0.0|g" /etc/elasticsearch/elasticsearch.yml
